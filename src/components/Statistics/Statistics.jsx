@@ -1,34 +1,29 @@
 import PropTypes from 'prop-types';
+import { StatisticsWrapper, Text, Value } from './Statistics.styled';
 
-export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) => (
-  <div>
-    <p>
+export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
+  <StatisticsWrapper>
+    <Text value={good} total={total}>
       Good:
-      <span>{good}</span>
-    </p>
-    <p>
+      <Value>{good}</Value>
+    </Text>
+    <Text value={neutral} total={total}>
       Neutral:
-      <span>{neutral}</span>
-    </p>
-    <p>
+      <Value>{neutral}</Value>
+    </Text>
+    <Text value={bad} total={total}>
       Bad:
-      <span>{bad}</span>
-    </p>
-    <p>
+      <Value>{bad}</Value>
+    </Text>
+    <Text>
       Total:
-      <span>{total}</span>
-    </p>
-    <p>
+      <Value>{total}</Value>
+    </Text>
+    <Text>
       Positive feedback:
-      <span>{positivePercentage}</span>
-    </p>
-  </div>
+      <Value>{positivePercentage}</Value>
+    </Text>
+  </StatisticsWrapper>
 );
 
 Statistics.propTypes = {

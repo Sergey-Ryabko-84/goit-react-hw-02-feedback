@@ -3,6 +3,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
+import { GlobalStyle } from './GlobalStyle';
 export class App extends Component {
   state = {
     good: 0,
@@ -30,6 +31,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     return (
       <>
+        <GlobalStyle />
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
